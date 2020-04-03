@@ -2,7 +2,7 @@
 
 ## portfolio url
  https://portfolio-47ea0.firebaseapp.com/
-S
+
 ## Project setup
 ```
 npm install
