@@ -1,31 +1,23 @@
 <template>
-  <Header>
-    
-    <div class="headerSection">
-    
-     </div>
-     <div class="headerButton">
-      <button @click="toggle" class="btn btn-success">
-      <img class="img" src="../../src/assets/images/humburger.jpg" />
-      </button>
-      <div id="HeaderDrawer">
-      
-      <Drawer @close="toggle" align="left" :closeable="true">
-      <div v-if="open">content here</div>
-      </Drawer>
-     </div>
-    
-    </div>
-  </Header>
+	<div id= "headerSection">
+    <button @click="toggle" class="btn">
+    <img class= headerButton src= "../assets/images/humburger.png"/>
+    </button>
+    <Drawer @close="toggle" align="left" :closeable="true">
+    <div v-if="open"><Menu /></div>
+    </Drawer>
+	</div>
 </template>
 
 <script>
 import Drawer from "vue-simple-drawer";
+import Menu from "../components/Menu.vue"
 
 export default {
-  name: 'HeaderDrawer',
+  name: 'Header',
   components: {
-    Drawer
+    Drawer,
+    Menu
   },
   data() {
     return {
@@ -47,9 +39,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.headerSection{
+#headerSection {
   background-color: #F3F3F3;
   width: 100%;
   height: auto;
 }
+
+.btn{
+box-shadow: none;
+border-style: none;
+}
+
+.headerButton{
+  height: 30px; 
+  width: 30px;  
+}
+
 </style>
