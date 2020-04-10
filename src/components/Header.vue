@@ -1,7 +1,7 @@
 <template>
   <div id="headerSection">
-    <button
-      class="btn"
+    <button 
+      class="btn open" 
       @click="toggle"
     >
       <img
@@ -14,9 +14,8 @@
       :closeable="true"
       @close="toggle"
     >
-      <div v-if="open">
-        <Menu />
-      </div>
+      <Menu />
+      <div v-if="open" />
     </Drawer>
   </div>
 </template>
@@ -52,7 +51,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #headerSection {
+  padding: 10px;
   background-color: #f3f3f3;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: auto;
 }
