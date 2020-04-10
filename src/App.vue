@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <Header> </Header>
-    <Main> </Main>
-    <About> </About>
-    <Skill> </Skill>
-    <Vision> </Vision>
-    <Footer> </Footer>
-    <Menu> </Menu>
+    <Header />
+    <Main />
+    <About />
+    <Skill />
+    <Vision />
+    <Footer />
+    <Menu />
   </div>
 </template>
 

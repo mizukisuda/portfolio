@@ -1,12 +1,24 @@
 <template>
-	<div id= "headerSection">
-    <button @click="toggle" class="btn">
-    <img class= headerButton src= "../assets/images/humburger.png"/>
+  <div id="headerSection">
+    <button
+      class="btn"
+      @click="toggle"
+    >
+      <img
+        class="headerButton"
+        src="../assets/images/humburger.png"
+      >
     </button>
-    <Drawer @close="toggle" align="left" :closeable="true">
-    <div v-if="open"><Menu /></div>
+    <Drawer
+      align="left"
+      :closeable="true"
+      @close="toggle"
+    >
+      <div v-if="open">
+        <Menu />
+      </div>
     </Drawer>
-	</div>
+  </div>
 </template>
 
 <script>
@@ -34,25 +46,25 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap-reboot",
-"~bootstrap/scss/buttons"
+  "~bootstrap/scss/buttons"
 </style>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #headerSection {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   width: 100%;
   height: auto;
 }
 
-.btn{
-box-shadow: none;
-border-style: none;
+.btn {
+  box-shadow: none;
+  border-style: none;
 }
 
-.headerButton{
-  height: 30px; 
-  width: 30px;  
+.headerButton {
+  height: 30px;
+  width: 30px;
 }
 
 </style>
