@@ -1,49 +1,60 @@
 <template>
-  <div class= mainSection>
-		<div class= Name>
-			<div class= userName>M.Suda</div>
-			<div class= companyName>Seattleconsulting</div>
-		</div>
-		<img class= "profilePicture" src="../assets/images/profilePicture.png"/>
-	</div>
+  <div id="mainSection">
+    <div class="Name">
+      <div class="userName">
+        M.Suda
+      </div>
+      <div class="companyName">
+        Seattleconsulting
+      </div>
+    </div>
+    <img
+      class="profilePicture"
+      src="../assets/images/profilePicture.png"
+    >
+  </div>
 </template>
 
 <script>
-export default { 
-    name: 'HelloWorld',
-    props: {
-    msg: String 
-    }
-}
+/* Only comments */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
-.mainSection{
-		position: relative;
-    background: linear-gradient(to bottom,#80E1F7 , #06C1E6) ;
-    width: 100%;
-    height: auto;
-		padding-bottom: 30px;
-		text-align: center;
+.mainSection {
+  margin-top: 60px;
+  min-height: 200px;
+  border-bottom: solid 1px #cbcbcb;
+  background: linear-gradient(to bottom, #80e1f7, #06c1e6);
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
-.Name{
-	position: absolute;
-	top: 5px;
-	background-color: #FFFFFF;
-	font-size: 18pt;
-	color: Bold;
-	text-shadow: 1px 2px 3px #808080;
-	font-family: "Noto Sans";
+.Name {
+  font-style: bold;
+  font-size: 18pt;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #fff;
+  text-shadow: 1px 2px 3px #808080;
 }
 
+.userName {
+  padding: 20px 0 0 10px;
+}
 
-.profilePicture{
-	Border-radius: 50%;
-	width: 20%; 
-	height: 20%; 
+.companyName {
+  padding: 10px;
+}
+
+.profilePicture {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  padding: 10px;
+  background-position: center;
 }
 </style>

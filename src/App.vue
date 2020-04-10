@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <Header> </Header>
-    <Main> </Main>
-    <About> </About>
-    <Skill> </Skill>
-    <Vision> </Vision>
-    <Footer> </Footer>
-    <Menu> </Menu>
+    <Header />
+    <Main />
+    <About />
+    <Skill />
+    <Vision />
+    <Footer />
+    <Menu />
   </div>
 </template>
 
@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
