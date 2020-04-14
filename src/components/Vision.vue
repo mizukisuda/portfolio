@@ -5,14 +5,22 @@
     </div>
     <div class="visionExplain">
       <p>
-        「偶然的な出会い」や「コミュニケーション」を可能とするWebサービスに興味があります。まずはフロントエンドとして開発に関わったのち、行動経済学とUI/UXデザインを学び、UXエンジニアになりたいと考えています。
+        コミュニケーションを可能とするWebサービスに興味があります。まずはフロントエンドとして開発に関わったのち、行動経済学とUI/UXデザインを学び、UXエンジニアになりたいと考えています。
       </p>
     </div>
   </div>
 </template>
 
 <script>
-/* Only comments */
+export default {
+  name: 'Vision',
+  props: {
+    vision: { /* 親から受け取る属性名 */
+    type: Boolean,  /* データの型 */
+    default: false, /* デフォルト値 */
+  }
+}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
