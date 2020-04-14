@@ -15,15 +15,43 @@
           >https://github.com/mizukisuda</a>
         </label>
       </div>
-      <a class="skillCategories" />
-      <div class="skillList" />
+      <a class="skillCategories">
+        <p class="front-end">front-end</p>
+        <p class="back-end">Back-end</p>
+        <p class="devops">DevOps</p>
+      </a>
+      <div class="skillList">
+        <ul>
+          <li>HTML</li><ul>
+            <li>CSS</li><li>Javascript</li><li>SCSS</li> <li>Vue</li>
+          </ul>
+          <li>Java</li>
+          <li>Ruby</li>
+          <li>RubyOnRails</li>
+          <li>MySQL</li>
+        </ul>
+        <ul>
+          <li>Linux</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
       <div class="skillGraph" />
     </div>
   </div>
 </template>
 
 <script>
-/* Only comments */
+export default {
+  name: 'Skill',
+  props: {
+    skill: { /* 親から受け取る属性名 */
+    type: Boolean,  /* データの型 */
+    default: false, /* デフォルト値 */
+  }
+}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

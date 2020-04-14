@@ -16,7 +16,16 @@
 </template>
 
 <script>
-/* Only comments */
+export default {
+  name: 'Main',
+  props: {
+    main: { /* 親から受け取る属性名 */
+    type: Boolean,  /* データの型 */
+    default: false, /* デフォルト値 */
+  }
+}
+}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
