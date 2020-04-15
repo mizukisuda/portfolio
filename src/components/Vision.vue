@@ -12,15 +12,7 @@
 </template>
 
 <script>
-export default {
-  name: 'Vision',
-  props: {
-    vision: { /* 親から受け取る属性名 */
-    type: Boolean,  /* データの型 */
-    default: false, /* デフォルト値 */
-  }
-}
-}
+/* only comments */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

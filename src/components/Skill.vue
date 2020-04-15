@@ -16,91 +16,117 @@
         </label>
       </div>
     </div>
-    <button
-      class="front"
-      @click="setCurrentChart('front')"
-    >
-      Front-end
-    </button>
-    <div class="front-skills">
-      <ul :class="{'front-change':isFrontActive}">
-        style="list-style-type: none">
+    <div class="skillCategories">
+      <ul>
+        <li>
+          <span
+            class="front"
+            @click="setCurrentChart('front')"
+          >
+            Front-end
+          </span>
+        </li>
+        <li>
+          <span
+            class="back"
+            @click="setCurrentChart('back')"
+          >
+            Back-end
+          </span>
+        </li>
+        <li>
+          <span
+            class="devOps"
+            @click="setCurrentChart('devOps')"
+          >
+            DevOps
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="skillList">
+      <ul
+        class="front-skills"
+        :class="{'front-change':isFrontActive}"
+      >
         <li>HTML</li>
         <li>CSS</li>
         <li>Javascript</li>
         <li>SCSS</li>
         <li>Vue</li>
       </ul>
-      <v-bind:class='{active:isActive01}' />
+      <ul
+        class="back-skills"
+        :class="{'back-change':isBackActive}"
+      >
+        <li>Java</li>
+        <li>Ruby</li>
+        <li>RubyOnRails</li>
+        <li>MySQL</li>
+      </ul>
+      <ul
+        class="dev-skills"
+        :class="{'dev-change':isDevOpsActive}"
+      >
+        <li>Linux</li>
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>Firebase</li>
+      </ul>
     </div>
-    <button
-      class="back-btn"
-      @click="isActive01=!isActive01"
-    >
-      Back-end
-    </button>
-    <div class="back-skills">
-      <p :class="{active:isActive01}">
-        <ul style="list-style-type: none;">
-          <li>Java</li>
-          <li>Ruby</li>
-          <li>RubyOnRails</li>
-          <li>MySQL</li>
-        </ul>
-      </p>
+    <div v-if="isFrontActive">
+      <FrontChart />
     </div>
-    <button
-      class="devops-btn"
-      @click="isActive01=!isActive01"
-    >
-      DevOps
-    </button>
-    <div class="devops-skills">
-      <p :class="{active:isActive01}">
-        <ul style="list-style-type: none;">
-          <li>Linux</li>
-          <li>Git</li>
-          <li>GitHub</li>
-          <li>Firebase</li>
-        </ul>
-      </p>
+    <div v-if="isBackActive">
+      <BackChart />
+    </div>
+    <div v-if="isDevOpsActive">
+      <DevChart />
     </div>
   </div>
 </template>
 
 <script>
-// import FrontChart from "../components/FrontChart.vue"
-// import BackChart from "../components/FrontChart.vue"
-// import Devchart from "../components/FrontChart.vue"
+import FrontChart from "../components/FrontChart.vue"
+import BackChart from "../components/BackChart.vue"
+import DevChart from "../components/DevChart.vue"
 
 export default {
   name: 'Skill',
-  // components: {
-  //   FrontChart,
-  //   BackChart,
-  //   Devchart
-  // },
+  components: {
+    FrontChart,
+    BackChart,
+    DevChart
+  },
   data(){
     return {
-      currentChart: 'front'
+      currentChart: 'front',
+      frontChange: true,
+      backChange: false,
+      devChange: false
     }
   },
   computed: {
     isFrontActive(){
       return this.currentChart=='front';
-    }
-  },
+    },
+    isBackActive(){
+      return this.currentChart=='back';
+    },
+    isDevOpsActive(){
+      return this.currentChart=='devOps';
+    },
   methods: {
     setCurrentChart(chart) {
       this.currentChart = chart;
     }
   }
 }
+}
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
 #skillSection {
   background-color: white;
   height: auto;
@@ -140,16 +166,32 @@ export default {
   font-family: "Noto Sans JP", sans-serif;
 }
 
-.front-btn {
-  color: yellow;
+.skillCategories {
+  padding: 20px 0;
+  text-align: center;
 }
 
-.front-skills {
-  color: yellow;
+.skillCategories .il {
+  display: inline-block;
 }
 
-.front-skills .active {
-  color: blue;
+.front {
+  display: inline-block;
+  margin: 0 auto;
+  color: #b51a1a;
+  font-size: 18px;
+  cursor: pointer;
 }
 
+.front-skills li {
+  color: rgba(181, 26, 26, 0.75);
+  height: 30px;
+  font-weight: bold;
+  padding: 12px 20px 2px 20px;
+  box-shadow: 0 0 8px gray;
+}
+
+.front-change {
+  background-color: rgba(181, 26, 26, 0.25);
+}
 </style>
