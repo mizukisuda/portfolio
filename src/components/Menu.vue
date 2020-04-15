@@ -1,11 +1,13 @@
 <template>
   <div id="drawersection">
-    <div class="drawerButton">
+    <label
+      for="nav-input"
+    >
       <img
-        class="nav-close"
+        class="drawerButton"
         src="../assets/images/close.png"
       >
-    </div>
+    </label>
     <ul class="drawerMenuSection">
       <li class="drawerMenuItem">
         <a
@@ -94,6 +96,12 @@
   background-color: #f3f3f3;
   width: 100%;
   height: 40px;
+}
+
+.drawerButton {
+  width: 20px;
+  height: 20px;
+  padding: 11px;
 }
 
 .nav-close {

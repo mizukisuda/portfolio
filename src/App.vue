@@ -25,7 +25,7 @@ export default {
     About,
     Skill,
     Vision,
-    Footer
+    Footer,
   },
 
 }

@@ -1,6 +1,6 @@
 <template>
-  <div id="skillSection">
-    <div class="skillTitle">
+<div id="skillSection">
+<div class="skillTitle">
       Skill Set
     </div>
     <div class="skillExplain">
@@ -15,87 +15,60 @@
           >https://github.com/mizukisuda</a>
         </label>
       </div>
+      </div>
+<button class="front-btn" v-on:click='isActive01=!isActive01'>Front-end</button>
+    <div class="front-skills"> <p v-bind:class='{active:isActive01}'>
+      <ul style="list-style-type: none">
+          <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>SCSS</li>
+            <li>Vue</li>
+          </ul>
+    </p>
     </div>
-    <button
-      class="front"
-      @click="setCurrentChart('front')"
-    >
-      Front-end
-    </button>
-    <div class="front-skills">
-      <ul :class="{'front-change':isFrontActive}">
-        style="list-style-type: none">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>SCSS</li>
-        <li>Vue</li>
-      </ul>
-      <v-bind:class='{active:isActive01}' />
-    </div>
-    <button
-      class="back-btn"
-      @click="isActive01=!isActive01"
-    >
-      Back-end
-    </button>
-    <div class="back-skills">
-      <p :class="{active:isActive01}">
-        <ul style="list-style-type: none;">
+    <button class="back-btn" v-on:click='isActive01=!isActive01'>Back-end</button>
+    <div class="back-skills"> <p v-bind:class='{active:isActive01}'>
+      <ul style="list-style-type: none">
           <li>Java</li>
           <li>Ruby</li>
           <li>RubyOnRails</li>
           <li>MySQL</li>
-        </ul>
-      </p>
+          </ul>
+    </p>
     </div>
-    <button
-      class="devops-btn"
-      @click="isActive01=!isActive01"
-    >
-      DevOps
-    </button>
-    <div class="devops-skills">
-      <p :class="{active:isActive01}">
-        <ul style="list-style-type: none;">
+    <button class="devops-btn" v-on:click='isActive01=!isActive01'>DevOps</button>
+    <div class="devops-skills"> <p v-bind:class='{active:isActive01}'>
+      <ul style="list-style-type: none">
           <li>Linux</li>
           <li>Git</li>
           <li>GitHub</li>
           <li>Firebase</li>
-        </ul>
-      </p>
+          </ul>
+    </p>
     </div>
-  </div>
+    </div>
 </template>
 
 <script>
-// import FrontChart from "../components/FrontChart.vue"
-// import BackChart from "../components/FrontChart.vue"
-// import Devchart from "../components/FrontChart.vue"
+import FrontChart from "../components/FrontChart.vue"
+import BackChart from "../components/FrontChart.vue"
+import Devchart from "../components/FrontChart.vue"
 
-export default {
-  name: 'Skill',
-  // components: {
-  //   FrontChart,
-  //   BackChart,
-  //   Devchart
-  // },
-  data(){
-    return {
-      currentChart: 'front'
-    }
+  export default {
+  name: 'skill',
+  components: {
+    FrontChart,
+    BackChart,
+    Devchart
   },
-  computed: {
-    isFrontActive(){
-      return this.currentChart=='front';
+    data(){
+      return {
+        isActive01: true,
+      }
     }
-  },
-  methods: {
-    setCurrentChart(chart) {
-      this.currentChart = chart;
-    }
-  }
 }
+
 </script>
 
 <style>
@@ -139,16 +112,15 @@ export default {
   font-size: 12pt;
   font-family: "Noto Sans JP", sans-serif;
 }
+.front-btn{
+color: yellow;
+}
 
-.front-btn {
+.front-skills{
   color: yellow;
 }
 
-.front-skills {
-  color: yellow;
-}
-
-.front-skills .active {
+.front-skills .active{
   color: blue;
 }
 

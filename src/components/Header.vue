@@ -64,7 +64,7 @@ export default {
   height: 3px;/* 線の太さ */
   width: 25px;/* 長さ */
   border-radius: 3px;
-  background: #555;
+  background: #707070;
   display: block;
   content: '';
   cursor: pointer;
