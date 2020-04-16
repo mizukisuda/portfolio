@@ -16,22 +16,11 @@
 </template>
 
 <script>
-export default {
-  name: 'Main',
-  props: {
-    main: { /* 親から受け取る属性名 */
-    type: Boolean,  /* データの型 */
-    default: false, /* デフォルト値 */
-  }
-}
-}
-
+/* only comments */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
 #mainSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
   padding-bottom: 10px;

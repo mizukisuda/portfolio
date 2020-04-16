@@ -15,40 +15,111 @@
           >https://github.com/mizukisuda</a>
         </label>
       </div>
-      <a class="skillCategories">
-        <p class="front-end">front-end</p>
-        <p class="back-end">Back-end</p>
-        <p class="devops">DevOps</p>
-      </a>
-      <div class="skillList">
-        <ul>
-          <li>HTML</li><ul>
-            <li>CSS</li><li>Javascript</li><li>SCSS</li> <li>Vue</li>
-          </ul>
-          <li>Java</li>
-          <li>Ruby</li>
-          <li>RubyOnRails</li>
-          <li>MySQL</li>
-        </ul>
-        <ul>
-          <li>Linux</li>
-          <li>Git</li>
-          <li>GitHub</li>
-          <li>Firebase</li>
-        </ul>
-      </div>
-      <div class="skillGraph" />
+    </div>
+    <div class="skillCategories">
+      <ul>
+        <li>
+          <span
+            class="front"
+            @click="setCurrentChart('front')"
+          >
+            Front-end
+          </span>
+        </li>
+        <li>
+          <span
+            class="back"
+            @click="setCurrentChart('back')"
+          >
+            Back-end
+          </span>
+        </li>
+        <li>
+          <span
+            class="devOps"
+            @click="setCurrentChart('devOps')"
+          >
+            DevOps
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="skillList">
+      <ul
+        class="front-skills"
+        :class="{'front-change':isFrontActive}"
+      >
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>SCSS</li>
+        <li>Vue</li>
+      </ul>
+      <ul
+        class="back-skills"
+        :class="{'back-change':isBackActive}"
+      >
+        <li>Java</li>
+        <li>Ruby</li>
+        <li>RubyOnRails</li>
+        <li>MySQL</li>
+      </ul>
+      <ul
+        class="dev-skills"
+        :class="{'dev-change':isDevOpsActive}"
+      >
+        <li>Linux</li>
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>Firebase</li>
+      </ul>
+    </div>
+    <div v-if="isFrontActive">
+      <FrontChart />
+    </div>
+    <div v-if="isBackActive">
+      <BackChart />
+    </div>
+    <div v-if="isDevOpsActive">
+      <DevChart />
     </div>
   </div>
 </template>
 
 <script>
+import FrontChart from "../components/FrontChart.vue"
+import BackChart from "../components/BackChart.vue"
+import DevChart from "../components/DevChart.vue"
+
 export default {
   name: 'Skill',
-  props: {
-    skill: { /* 親から受け取る属性名 */
-    type: Boolean,  /* データの型 */
-    default: false, /* デフォルト値 */
+  components: {
+    FrontChart,
+    BackChart,
+    DevChart
+  },
+  data(){
+    return {
+      currentChart: 'front',
+      frontChange: true,
+      backChange: false,
+      devChange: false
+    }
+  },
+  computed: {
+    isFrontActive(){
+      return this.currentChart=='front';
+    },
+    isBackActive(){
+      return this.currentChart=='back';
+    },
+    isDevOpsActive(){
+      return this.currentChart=='devOps';
+    },
+  methods: {
+    setCurrentChart(chart) {
+      this.currentChart = chart;
+    }
   }
 }
 }
@@ -56,8 +127,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
 #skillSection {
   background-color: white;
   height: auto;
@@ -97,4 +166,32 @@ export default {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+.skillCategories {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.skillCategories .il {
+  display: inline-block;
+}
+
+.front {
+  display: inline-block;
+  margin: 0 auto;
+  color: #b51a1a;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.front-skills li {
+  color: rgba(181, 26, 26, 0.75);
+  height: 30px;
+  font-weight: bold;
+  padding: 12px 20px 2px 20px;
+  box-shadow: 0 0 8px gray;
+}
+
+.front-change {
+  background-color: rgba(181, 26, 26, 0.25);
+}
 </style>

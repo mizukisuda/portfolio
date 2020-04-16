@@ -25,13 +25,14 @@ export default {
     About,
     Skill,
     Vision,
-    Footer
+    Footer,
   },
 
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

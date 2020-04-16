@@ -12,15 +12,7 @@
 </template>
 
 <script>
-export default {
-  name: 'About',
-  props: {
-    about: {
-    type: Boolean,
-    default: false,
-  }
-}
-}
+/* only comments */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
