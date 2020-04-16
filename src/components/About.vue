@@ -5,7 +5,7 @@
     </div>
     <div class="aboutExplain">
       <p>
-        北海道出身の新卒一年目。大学において教育学を学ぶなかで、教育の不可能性に気づき、哲学や行動経済学、Webサービスの技術に興味を持つ。以降、エンジニアに方向転換し、未経験から技術を学ぶ。
+        北海道出身の新卒一年目。大学において教育学を学ぶなかで、その限界に気づき、哲学や行動経済学、Webサービスの技術に興味を持つ。以降、エンジニアに方向転換し、未経験から技術を学ぶ。
       </p>
     </div>
   </div>
@@ -19,8 +19,6 @@
 <style scoped>
 #aboutSection {
   background-color: #f5f5f5;
-  height: auto;
-  width: 100%;
   padding: 0 0 20px 0;
 }
 
@@ -37,13 +35,13 @@
 .aboutExplain {
   margin: 0 auto;
   width: 80%;
+  line-height: 1em;
 }
 
 p {
   color: #707070;
   font-size: 12pt;
   font-family: "Noto Sans JP", sans-serif;
-  word-wrap: break-all;/* 折り返し */
-  line-height: 0.25 em;/* 行間の調節 */
+  word-wrap: break-all;
 }
 </style>

@@ -5,7 +5,7 @@
     </div>
     <div class="skillExplain">
       <p>
-        修練のすえ身につけたスキルをまとめました。デザインもできるフロントエンドエンジニアを目指しているため、バックエンドとUI/UXデザインのスキルも高めていきたいと考えています。
+        スキルをまとめました。まだまだ知識が浅い段階ではありますが、デザインもできるフロントエンドエンジニアを目指しているため、バックエンドとUI/UXデザインのスキルも高めていきたいと考えています。
       </p>
       <div class="myGitHub">
         <label class="gitHubLabel">GitHub：
@@ -51,7 +51,7 @@
       >
         <li>HTML</li>
         <li>CSS</li>
-        <li>Javascript</li>
+        <li>JavaScript</li>
         <li>SCSS</li>
         <li>Vue</li>
       </ul>
@@ -74,22 +74,30 @@
         <li>Firebase</li>
       </ul>
     </div>
-    <div v-if="isFrontActive">
-      <FrontChart />
-    </div>
-    <div v-if="isBackActive">
-      <BackChart />
-    </div>
-    <div v-if="isDevOpsActive">
-      <DevChart />
+    <div class="Chart">
+      <div
+        v-if="isFrontActive"
+      >
+        <FrontChart />
+      </div>
+      <div
+        v-if="isBackActive"
+      >
+        <BackChart />
+      </div>
+      <div
+        v-if="isDevOpsActive"
+      >
+        <DevChart />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import FrontChart from "../components/FrontChart.vue"
-import BackChart from "../components/BackChart.vue"
-import DevChart from "../components/DevChart.vue"
+import FrontChart from "./FrontChart.vue"
+import BackChart from "./BackChart.vue"
+import DevChart from "./DevChart.vue"
 
 export default {
   name: 'Skill',
@@ -101,9 +109,6 @@ export default {
   data(){
     return {
       currentChart: 'front',
-      frontChange: true,
-      backChange: false,
-      devChange: false
     }
   },
   computed: {
@@ -116,22 +121,21 @@ export default {
     isDevOpsActive(){
       return this.currentChart=='devOps';
     },
+  },
   methods: {
     setCurrentChart(chart) {
       this.currentChart = chart;
     }
   }
 }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 #skillSection {
-  background-color: white;
+  background-color: #fff;
   height: auto;
   width: 100%;
-  padding: 0 0 20px 0;
 }
 
 .skillTitle {
@@ -150,8 +154,8 @@ export default {
   color: #707070;
   font-size: 12pt;
   font-family: "Noto Sans JP", sans-serif;
-  word-wrap: break-all;/* 折り返し */
-  line-height: 0.25 em;/* 行間の調節 */
+  word-wrap: break-all;
+  line-height: 1em;
 }
 
 .myGitHub {
@@ -169,29 +173,76 @@ export default {
 .skillCategories {
   padding: 20px 0;
   text-align: center;
+
+  li {
+    display: inline;
+  }
+
+  .front {
+    color: #b51a1a;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .back {
+    color: #0f8839;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .devOps {
+    color: #571083;
+    font-size: 18px;
+    cursor: pointer;
+  }
 }
 
-.skillCategories .il {
-  display: inline-block;
-}
-
-.front {
-  display: inline-block;
-  margin: 0 auto;
-  color: #b51a1a;
+.skillList {
+  width: auto;
+  text-align: center;
   font-size: 18px;
-  cursor: pointer;
+
+  li {
+    display: inline-block;
+    height: 20px;
+    font-weight: bold;
+    padding: 10px 20px 7px 20px;
+    margin: 5px;
+    box-shadow: 0 0 5px gray;
+  }
+
+  .front-skills li {
+    color: rgba(181, 26, 26, 0.75);
+  }
+
+  .back-skills li {
+    color: rgba(15, 136, 57, 0.75);
+  }
+
+  .dev-skills li {
+    color: rgba(87, 16, 131, 0.75);
+  }
+
+  .front-change li {
+    background-color: rgba(181, 26, 26, 0.25);
+    box-shadow: none;
+  }
+
+  .back-change li {
+    background-color: rgba(15, 136, 57, 0.25);
+    box-shadow: none;
+  }
+
+  .dev-change li {
+    background-color: rgba(87, 16, 131, 0.25);
+    box-shadow: none;
+  }
 }
 
-.front-skills li {
-  color: rgba(181, 26, 26, 0.75);
-  height: 30px;
-  font-weight: bold;
-  padding: 12px 20px 2px 20px;
-  box-shadow: 0 0 8px gray;
-}
-
-.front-change {
-  background-color: rgba(181, 26, 26, 0.25);
+.Chart {
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  padding: 20px;
 }
 </style>

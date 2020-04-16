@@ -1,19 +1,34 @@
 <script>
 import { Radar } from 'vue-chartjs';
 export default {
-  name: 'Chart',
+  name: 'FrontChart',
   extends: Radar,
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript','SCSS', 'Vue'],
+        labels: ['HTML', 'CSS', 'JavaScript','SCSS', 'Vue'],
         datasets: [{
-          data: [ 20, 30, 10, 5, 15],
+          label: "Front-end",
+          data: [ 40, 50, 20, 20, 20],
           backgroundColor: [
-            'rgba(100, 0, 150, 0.25)'
+            'rgba(255, 99, 132, 0.2)',
           ],
-        }]
-      }
+          borderColor: [
+            'rgba(255, 99, 132, 0.7)'
+        ],
+          borderWidth: 1
+      },
+    ]
+    },
+    options:{
+      scale:{
+        ticks:{
+            suggestedMax: 100,
+            suggestedMin: 0,
+            stepSize: 20,
+    }
+  }
+    }
     }
   },
   mounted () {

@@ -23,7 +23,7 @@
 <style scoped>
 #mainSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
-  padding-bottom: 10px;
+  padding: 30px 0 20px 0;
   text-align: center;
 }
 
@@ -47,8 +47,8 @@
 }
 
 .profilePicture {
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   padding: 5px 0 0 0;
   background-position: center;

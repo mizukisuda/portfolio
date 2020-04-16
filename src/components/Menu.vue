@@ -9,34 +9,38 @@
       >
     </label>
     <ul class="drawerMenuSection">
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="#headerSection"
-          @click="Home()"
-        >Home</a>
-      </li>
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="#aboutSection"
-          @click="About()"
-        >About Me</a>
-      </li>
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="#skillSection"
-          @click="Skill()"
-        >Skills Sets</a>
-      </li>
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="#visionSection"
-          @click="Vision()"
-        >Vision</a>
-      </li>
+      <label
+        for="nav-input"
+      >
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#headerSection"
+            @click="Home()"
+          >Home</a>
+        </li>
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#aboutSection"
+            @click="About()"
+          >About Me</a>
+        </li>
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#skillSection"
+            @click="Skill()"
+          >Skill Sets</a>
+        </li>
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#visionSection"
+            @click="Vision()"
+          >Vision</a>
+        </li>
+      </label>
     </ul>
   </div>
 </template>
@@ -54,6 +58,7 @@
         null,
         'y'
       )
+      this.closeDrawer()
     },
     About () {
       event.preventDefault()
@@ -64,6 +69,7 @@
         null,
         'y'
       )
+      this.closeDrawer()
     },
     Skill () {
       event.preventDefault()
@@ -74,6 +80,7 @@
         null,
         'y'
       )
+      this.closeDrawer()
     },
   Vision () {
       event.preventDefault()
@@ -84,6 +91,10 @@
         null,
         'y'
       )
+      this.closeDrawer()
+  },
+  closeDrawer(){
+    this.$emit('close')
   }
   }
 }
@@ -101,7 +112,7 @@
 .drawerButton {
   width: 20px;
   height: 20px;
-  padding: 11px;
+  padding: 22px;
 }
 
 .nav-close {
@@ -113,10 +124,14 @@
 .drawerMenuSection {
   list-style-type: none;
   text-align: center;
-  background: white;
-  width: 250px;
+  width: auto;
   margin: 60px auto;
-  padding: 10px;
+  background: white;
+}
+
+li {
+  border: solid;
+  border-color: #f3f3f3;
 }
 
 .drawerMenuSection li a {

@@ -1,55 +1,62 @@
 <template>
   <div id="footerSection">
+    <a
+      id="smoothScroll"
+      href="#app"
+      @click="clickSmoothScroll()"
+    >
+      <img
+        class="gotop"
+        src="../assets/images/gotop.png"
+        alt="トップへ戻る"
+      ></a>
     <div class="footerCopyright">
-      <div
-        v-scroll="handleScroll"
-        class="top-scroll"
-        :class="{visible: visible}"
-      >
-        <a
-          v-smooth-scroll
-          href="#headerSection"
-        ><img
-          class="footerScroll"
-          src="../assets/images/gotop.png"
-          alt="トップへ戻る"
-        ></a>
-        <p>©Seattleconsulting</p>
-      </div>
+      <small> &copy;Seattleconsulting</small>
     </div>
   </div>
 </template>
 
 <script>
-/* Only comments */
+export default {
+  methods: {
+    clickSmoothScroll () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#app'),
+        400,
+        null,
+        null,
+        'y'
+      )
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#footerSection {
-  width: 100%;
-  height: auto;
-  max-height: 40px;
-  margin-top: auto;
-  background: linear-gradient(180deg, #80e1f7, #06c1e6);
-}
+  #footerSection {
+    background: linear-gradient(#80e1f7, #06c1e6);
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    text-align: center;
+    padding: 20px 0 15px 0;
+    position: relative;
+  }
 
-.footerCopyright {
-  color: #555;
-  font-size: 12pt;
-  font-family: "Noto Sans JP", sans-serif;
-  text-align: center;
-  font-weight: bold;
-  position: relative;
-  padding: 10px;
-}
+  .foterCopyright {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 10px;
+  }
 
-.footerScroll {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: -15px;
-  text-align: center;
-}
+  .gotop {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    top: -15px;
+    left: 49%;
+    position: absolute;
+  }
 
 </style>
