@@ -7,14 +7,16 @@
       <p>
         スキルをまとめました。まだまだ知識が浅い段階ではありますが、デザインもできるフロントエンドエンジニアを目指しているため、バックエンドとUI/UXデザインのスキルも高めていきたいと考えています。
       </p>
-      <div class="myGitHub">
-        <label class="gitHubLabel">GitHub：
-          <a
-            class="gitHubLink"
-            href="https://github.com/mizukisuda"
-          >https://github.com/mizukisuda</a>
-        </label>
-      </div>
+    </div>
+    <div class="myGitHub">
+      <a
+        class="gitHubLink"
+        target="_blank"
+        href="https://github.com/mizukisuda"
+      >
+        <label
+          class="gitHubLabel"
+        >GitHub : https://github.com/mizukisuda</label></a>
     </div>
     <div class="skillCategories">
       <ul>
@@ -141,7 +143,7 @@ export default {
 .skillTitle {
   padding: 20px 0 20px 0;
   text-align: center;
-  color: #707070;
+  color: #20879f;
   font-weight: bold;
   font-size: 18pt;
   font-family: "Noto Sans JP", sans-serif;
@@ -161,6 +163,7 @@ export default {
 .myGitHub {
   text-align: center;
   padding-top: 10px;
+  font-weight: bold;
 }
 
 .gitHubLabel {
@@ -168,10 +171,11 @@ export default {
   color: #20879f;
   font-size: 12pt;
   font-family: "Noto Sans JP", sans-serif;
+  cursor: pointer;
 }
 
 .skillCategories {
-  padding: 20px 0;
+  padding: 30px 0 10px 0;
   text-align: center;
 
   li {
@@ -243,6 +247,6 @@ export default {
   width: 280px;
   height: 280px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0 10px 0;
 }
 </style>

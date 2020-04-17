@@ -12,23 +12,29 @@ export default {
           data: [ 20, 20, 40, 40, 20],
           backgroundColor: [
             'rgba(87, 16, 131, 0.25)'
-          ],
-          borderColor: [
+            ],
+            borderColor: [
+              'rgba(87, 16, 131, 0.7)',
+              'rgba(87, 16, 131, 0.7)',
+              'rgba(87, 16, 131, 0.7)',
               'rgba(87, 16, 131, 0.7)'
             ],
             borderWidth: 1
           },
         ]
       },
-      options: {
-        scale:{
-          ticks:{
+    options:{
+      scale:{
+        ticks:{
             suggestedMax: 100,
-              suggestedMin: 0,
-                stepSize: 20
-          }
-        }
-      }
+            suggestedMin: 0,
+            stepSize: 20,
+    }
+  },
+    legend:{
+    display: false,
+    }
+    },
     }
   },
   mounted () {
