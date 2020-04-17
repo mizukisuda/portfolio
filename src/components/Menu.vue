@@ -1,75 +1,143 @@
 <template>
-  <div class="drawerSection">
-    <div class="drawerButton">
-      <button 
-        class="btn close" 
-        @click="toggle"
+  <div id="drawersection">
+    <label
+      for="nav-input"
+    >
+      <img
+        class="drawerButton"
+        src="../assets/images/close.png"
       >
-        <img
-          class="closeImage"
-          src="../assets/images/closeImage.png"
-        >
-      </button>
-    </div>
+    </label>
     <ul class="drawerMenuSection">
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="../components/Main.vue"
-        >Home</a>
-      </li>
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="../components/About.vue"
-        >About Me</a>
-      </li>
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="../components/Skill.vue"
-        >Skills Sets</a>
-      </li>
-      <li class="drawerMenuItem">
-        <a
-          class="drawerMenuItemLink"
-          href="../components/Vision.vue"
-        >Vision</a>
-      </li>
+      <label
+        for="nav-input"
+      >
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#headerSection"
+            @click="Home()"
+          >Home</a>
+        </li>
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#aboutSection"
+            @click="About()"
+          >About Me</a>
+        </li>
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#skillSection"
+            @click="Skill()"
+          >Skill Sets</a>
+        </li>
+        <li class="drawerMenuItem">
+          <a
+            class="drawerMenuItemLink"
+            href="#visionSection"
+            @click="Vision()"
+          >Vision</a>
+        </li>
+      </label>
     </ul>
   </div>
 </template>
 
 <script>
-/* Only comments */
+  export default{
+    name: 'Menu',
+  methods: {
+    Home () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#headerSection'),
+        400,
+        null,
+        null,
+        'y'
+      )
+      this.closeDrawer()
+    },
+    About () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#aboutSection'),
+        400,
+        null,
+        null,
+        'y'
+      )
+      this.closeDrawer()
+    },
+    Skill () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#skillSection'),
+        400,
+        null,
+        null,
+        'y'
+      )
+      this.closeDrawer()
+    },
+  Vision () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#visionSection'),
+        400,
+        null,
+        null,
+        'y'
+      )
+      this.closeDrawer()
+  },
+  closeDrawer(){
+    this.$emit('close')
+  }
+  }
+}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-
-.drawerSection {
+#drawersection {
   background-color: #f3f3f3;
   width: 100%;
-  height: auto;
+  height: 40px;
+}
+
+.drawerButton {
+  width: 20px;
+  height: 20px;
+  padding: 22px;
+}
+
+.nav-close {
+  display: block;
+  margin: 0 0 0 auto;
+  padding: 10px 10px 0 0;
 }
 
 .drawerMenuSection {
-  background-color: #fff;
-  width: 100%;
-  height: auto;
+  list-style-type: none;
+  text-align: center;
+  width: auto;
+  margin: 60px auto;
+  background: white;
 }
 
-.drawerMenuItem {
-  background-color: #fff;
-  width: 100%;
-  height: 50px;
+li {
+  border: solid;
+  border-color: #f3f3f3;
 }
 
-.drawerMenuItemLink {
-  color: #707070;
-  font-size: 12px;
-  font-family: "Noto Sans Japanese", sans-serif;
+.drawerMenuSection li a {
+  text-decoration: none;
+  color: gray;
+  display: block;
+  padding: 20px 50px;
 }
-
 </style>

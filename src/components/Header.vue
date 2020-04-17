@@ -1,72 +1,127 @@
 <template>
   <div id="headerSection">
-    <button 
-      class="btn open" 
-      @click="toggle"
-    >
-      <img
-        class="headerButton"
-        src="../assets/images/humburger.png"
+    <div id="nav-drawer">
+      <input
+        id="nav-input"
+        v-model="checked"
+        type="checkbox"
+        class="nav-unshown"
       >
-    </button>
-    <Drawer
-      align="left"
-      :closeable="true"
-      @close="toggle"
-    >
-      <Menu />
-      <div v-if="open" />
-    </Drawer>
+      <label
+        id="nav-close"
+        class="nav-unshown"
+        for="nav-input"
+      />
+      <label
+        id="nav-open"
+        for="nav-input"
+      ><span /></label>
+      <div id="nav-content">
+        <Menu @close="closeMenuEvent" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Drawer from "vue-simple-drawer";
 import Menu from "../components/Menu.vue"
-
 export default {
   name: 'Header',
   components: {
-    Drawer,
     Menu
   },
-  data() {
-    return {
-      open: false
+  data(){
+    return{
+      checked:false,
     }
   },
-  methods: {
-    toggle() {
-      this.open = !this.open
+  methods:{
+    closeMenuEvent(){
+      this.checked=false
     }
   }
-};
+  }
 </script>
-
-<style lang="scss">
-@import "~bootstrap/scss/bootstrap-reboot",
-  "~bootstrap/scss/buttons"
-</style>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #headerSection {
-  padding: 10px;
-  background-color: #f3f3f3;
+  padding: 20px;
+  background: #f3f3f3;
+}
+
+#nav-drawer {
+  position: relative;
+}
+
+.nav-unshown {
+  display: none;
+}
+
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+#nav-open span,
+#nav-open span::before,
+#nav-open span::after {
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+
+#nav-open span::before {
+  bottom: -8px;
+}
+
+#nav-open span::after {
+  bottom: -16px;
+}
+
+#nav-close {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+#nav-content {
+  overflow: auto;
   position: fixed;
   top: 0;
-  width: 100%;
-  height: auto;
+  left: 0;
+  z-index: 9999;
+  width: 80%;
+  max-width: 330px;
+  height: 100%;
+  background: #f3f3f3;
+  transition: 0.3s ease-in-out;
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
 }
 
-.btn {
-  box-shadow: none;
-  border-style: none;
+#nav-input:checked ~ #nav-close {
+  display: block;
+  opacity: 0.5;
 }
 
-.headerButton {
-  height: 30px;
-  width: 30px;
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
 }
-
 </style>

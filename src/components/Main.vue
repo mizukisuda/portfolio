@@ -16,26 +16,19 @@
 </template>
 
 <script>
-/* Only comments */
+/* only comments */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
-.mainSection {
-  margin-top: 60px;
-  min-height: 200px;
-  border-bottom: solid 1px #cbcbcb;
-  background: linear-gradient(to bottom, #80e1f7, #06c1e6);
-  width: 100%;
-  height: auto;
-  padding-bottom: 30px;
+#mainSection {
+  background: linear-gradient(180deg, #80e1f7, #06c1e6);
+  padding: 30px 0 20px 0;
   text-align: center;
 }
 
 .Name {
-  font-style: bold;
+  font-weight: bold;
   font-size: 18pt;
   font-family: "Noto Sans JP", sans-serif;
   color: #fff;
@@ -43,7 +36,10 @@
 }
 
 .userName {
-  padding: 20px 0 0 10px;
+  border-bottom: solid 2px #fff;
+  margin: 0 auto;
+  padding: 20px 0 15px 0;
+  width: 150px;
 }
 
 .companyName {
@@ -51,10 +47,10 @@
 }
 
 .profilePicture {
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
-  padding: 10px;
+  padding: 5px 0 0 0;
   background-position: center;
 }
 </style>
