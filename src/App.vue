@@ -27,7 +27,6 @@ export default {
     Vision,
     Footer,
   },
-
 }
 </script>
 

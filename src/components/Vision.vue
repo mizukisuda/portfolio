@@ -5,7 +5,7 @@
     </div>
     <div class="visionExplain">
       <p>
-        コミュニケーションを可能とするWebサービスに興味があります。まずはフロントエンドとして開発に関わったのち、行動経済学とUI/UXデザインを学び、UXエンジニアになりたいと考えています。
+        コミュニケーションを可能とするWebサービスに興味があります。まずはフロントエンドで開発に関わったのち、行動経済学とUI/UXデザインを学び、UXエンジニアになるのが当面の目標です。
       </p>
     </div>
   </div>
@@ -17,16 +17,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* Only comments */
 #visionSection {
   background-color: white;
   height: auto;
   width: 100%;
   padding: 0 0 20px 0;
+  margin-bottom: 10px;
 }
 
 .visionTitle {
-  padding: 20px 0 20px 0;
+  padding: 20px;
   color: #20879f;
   font-size: 18pt;
   font-family: "Noto Sans JP", sans-serif;
@@ -41,7 +41,7 @@
   color: #707070;
   font-size: 12pt;
   font-family: "Noto Sans JP", sans-serif;
-  word-wrap: break-all;/* 折り返し */
-  line-height: 0.25 em;/* 行間の調節 */
+  word-wrap: break-all;
+  line-height: 1em;
 }
 </style>
