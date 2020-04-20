@@ -113,6 +113,7 @@
   width: 20px;
   height: 20px;
   padding: 22px;
+  cursor: pointer;
 }
 
 .nav-close {

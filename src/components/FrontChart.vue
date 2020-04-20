@@ -11,15 +11,19 @@ export default {
           label: "Front-end",
           data: [ 40, 50, 20, 20, 20],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 0.7)'
-        ],
-          borderWidth: 1
+              'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(255, 99, 132, 0.7)'
+            ],
+            borderWidth: 1
+          },
+        ]
       },
-    ]
-    },
     options:{
       scale:{
         ticks:{
@@ -27,8 +31,11 @@ export default {
             suggestedMin: 0,
             stepSize: 20,
     }
-  }
+  },
+    legend:{
+    display: false,
     }
+    },
     }
   },
   mounted () {
