@@ -38,8 +38,14 @@ export default {
     },
     }
   },
+  computed:{
+  score(){
+      return this.$store.getters.skillScore
+  }},
+
   mounted () {
-    this.renderChart(this.data, this.options)
-  }
+    this.renderChart(this.data, this.options),
+    this.$store.dispatch('getSkillScore')
+  },
 }
 </script>

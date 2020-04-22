@@ -1,26 +1,33 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex) //vuexが読み込まれている
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
-  score: [],
-    apiUrl:'https://us-central1-portfolio-47ea0.cloudfunctions.net/skills'
+  skillScore: []
   },
-  mutations: {
-    setScore(state, payload) {
-      state.score = payload.score
-    }
-  },
-  actions: {
-    doUpdate({commit}, score){
-    commit('setScore',{score})
-    }
-    },
-  getters: {
-    score(state) { return state.score }
-  }
-})
 
-console.log(store.state.score)
+  getters: {
+    skillScore(state) {
+      return state.skillScore }
+  },
+
+  mutations: {
+    setSkillScore(state,payload) {
+      state.skillScore=payload.skillScore
+    }
+  },
+
+  actions: {
+    async getSkillScore({commit}){
+      const skillScore = [];
+      const res = await axios.get('https://us-central1-portfolio-47ea0.cloudfunctions.net/skills')
+      res.data.forEach((score)=>{
+          skillScore.push(score);
+      });
+    commit('setSkillScore',{skillScore});
+    },
+  }
+});
