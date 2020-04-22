@@ -78,7 +78,7 @@
     </div>
     <div class="Chart">
       <div
-        v-if="isFrontActive"
+        v-if="isFrontActive &&loaded"
       >
         <FrontChart />
       </div>
@@ -123,6 +123,11 @@ export default {
     isDevOpsActive(){
       return this.currentChart=='devOps';
     },
+    // ①skill.vueのなかでloaded（store.js）を使うための関数を作成し、vueのなかで定義する（関数の名前は"loaded"でなくていい）
+    // mapstateにして省略するとなおよし
+    loaded(){
+      return this.$store.state.loaded
+    }
   },
   methods: {
     setCurrentChart(chart) {

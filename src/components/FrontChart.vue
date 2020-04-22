@@ -6,10 +6,10 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'JavaScript','SCSS', 'Vue'],
+        labels: [],
         datasets: [{
           label: "Front-end",
-          data: [ 40, 50, 20, 20, 20],
+          data: [],
           backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
             ],
@@ -38,14 +38,27 @@ export default {
     },
     }
   },
-  computed:{
-  score(){
-      return this.$store.getters.skillScore
-  }},
-
-  mounted () {
-    this.renderChart(this.data, this.options),
-    this.$store.dispatch('getSkillScore')
+  // disapatchでactionからデータを持ってくる
+created () {
+    this.getSkillScore(),
+    this.getSkillName()
   },
+  mounted () {
+    this.renderChart(this.data, this.options)
+  },
+  methods:{
+    // storeからfrontscore, nameを持ってくる
+   // dataの中のdatasets配列０番目を持ってくる
+    getSkillScore(){
+      const skillScore=this.$store.getters.frontScore
+      this.data.datasets[0].data=skillScore
+    },
+    // storeからname
+    getSkillName(){
+      const skillScore=this.$store.getters.frontName
+      this.data.labels=skillScore
+    }
+  }
 }
+
 </script>
