@@ -69,7 +69,8 @@ export default new Vuex.Store({
   actions: {
     async getSkillScore({commit}){
       const skillScore = [];
-      const res = await axios.get('https://us-central1-portfolio-47ea0.cloudfunctions.net/skills')
+      const functionsUrl = 'https://us-central1-' + process.env.VUE_APP_FUNCTIONS_API + '.cloudfunctions.net/skills';
+      const res = await axios.get(functionsUrl);
       res.data.forEach((score)=>{
           skillScore.push(score);
       });
