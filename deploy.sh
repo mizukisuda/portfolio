@@ -41,10 +41,10 @@ fi
 
 if [ $1 = "production" ] || [ $1 = "both" ]; then
   # 本番用デプロイ(masterブランチ)
-  switch to production server
+  #switch to production server
   git checkout .firebase/hosting.ZGlzdA.cache
   # TODO: masterにこの修正がマージされたら外して、masterのデプロイもこのシェルでできるようになります
-  # git checkout ${MASTER_BRANCH}
+  git checkout ${MASTER_BRANCH}
   # checkout check
   check_execute $? "checkout to master error"
   git pull
