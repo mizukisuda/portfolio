@@ -14,9 +14,9 @@
 # masterブランチ名が異なる人は変えてください(いないと思うが)
 MASTER_BRANCH='master'
 # TODO: 自分の開発用サービス名に変更する
-DEVELOPMENT_SERVER="seattle-academy-demo"
+DEVELOPMENT_SERVER="dev-portfolio-60b7a"
 # TODO: 自分の本番公開用サービス名に変更する
-PRODUCTION_SERVER="portfolio-43a14"
+PRODUCTION_SERVER="portfolio-47ea0"
 
 # $1:execute status
 # $2:error message
@@ -41,7 +41,7 @@ fi
 
 if [ $1 = "production" ] || [ $1 = "both" ]; then
   # 本番用デプロイ(masterブランチ)
-  # switch to production server
+  switch to production server
   git checkout .firebase/hosting.ZGlzdA.cache
   # TODO: masterにこの修正がマージされたら外して、masterのデプロイもこのシェルでできるようになります
   # git checkout ${MASTER_BRANCH}
