@@ -63,6 +63,7 @@ export default {
   width: 30px;
   height: 20px;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 #nav-open span,

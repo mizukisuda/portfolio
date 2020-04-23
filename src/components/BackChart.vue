@@ -6,38 +6,56 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Java', 'Ruby', 'RubyOnRails', 'MySQL'],
+        labels: [],
         datasets: [
           {
             label: 'Back-end',
-            data: [15, 15, 10, 30],
-            backgroundColor: [
+            data: [],
+          backgroundColor: [
               'rgba(15, 136, 57, 0.2)',
             ],
             borderColor: [
+              'rgba(15, 136, 57, 0.7)',
+              'rgba(15, 136, 57, 0.7)',
+              'rgba(15, 136, 57, 0.7)',
               'rgba(15, 136, 57, 0.7)'
-              // 'rgba(255, 99, 132, 1)',
-              // 'rgba(54, 162, 235, 1)',
-              // 'rgba(255, 206, 86, 1)',
-              // 'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
           },
         ]
       },
-      options: {
-        scale:{
-          ticks:{
+    options:{
+      scale:{
+        ticks:{
             suggestedMax: 100,
-              suggestedMin: 0,
-                stepSize: 20,
-          }
-        }
-      }
+            suggestedMin: 0,
+            stepSize: 20,
     }
+  },
+    legend:{
+    display: false,
+    }
+    },
+    }
+  },
+created () {
+    this.getSkillScore(),
+    this.getSkillName()
   },
   mounted () {
     this.renderChart(this.data, this.options)
+  },
+  methods:{
+    // storeからscore
+    getSkillScore(){
+      const skillScore=this.$store.getters.backScore
+      this.data.datasets[0].data=skillScore
+    },
+    // storeからname
+    getSkillName(){
+      const skillScore=this.$store.getters.backName
+      this.data.labels=skillScore
+    }
   }
 }
 </script>

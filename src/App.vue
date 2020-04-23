@@ -2,6 +2,7 @@
   <div id="app">
     <Header />
     <Main />
+    <!-- <div>{{ this.category }}</div> -->
     <About />
     <Skill />
     <Vision />
@@ -25,9 +26,13 @@ export default {
     About,
     Skill,
     Vision,
-    Footer,
+    Footer
   },
-}
+  //1. dispatchでactionsに
+  mounted () {
+    this.$store.dispatch('getSkillScore')
+  }
+  };
 </script>
 
 <style>

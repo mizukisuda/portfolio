@@ -6,33 +6,55 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Linux', 'Node', 'Git', 'GitHub','Firebase'],
+        labels: [],
         datasets: [{
           label: "DevOps",
-          data: [ 20, 20, 40, 40, 20],
+          data: [],
           backgroundColor: [
             'rgba(87, 16, 131, 0.25)'
-          ],
-          borderColor: [
+            ],
+            borderColor: [
+              'rgba(87, 16, 131, 0.7)',
+              'rgba(87, 16, 131, 0.7)',
+              'rgba(87, 16, 131, 0.7)',
               'rgba(87, 16, 131, 0.7)'
             ],
             borderWidth: 1
           },
         ]
       },
-      options: {
-        scale:{
-          ticks:{
+    options:{
+      scale:{
+        ticks:{
             suggestedMax: 100,
-              suggestedMin: 0,
-                stepSize: 20
-          }
-        }
-      }
+            suggestedMin: 0,
+            stepSize: 20,
     }
+  },
+    legend:{
+    display: false,
+    }
+    },
+    }
+  },
+created () {
+    this.getSkillScore(),
+    this.getSkillName()
   },
   mounted () {
     this.renderChart(this.data, this.options)
+  },
+  methods:{
+    // storeからscore
+    getSkillScore(){
+      const skillScore=this.$store.getters.devScore
+      this.data.datasets[0].data=skillScore
+    },
+    // storeからname
+    getSkillName(){
+      const skillScore=this.$store.getters.devName
+      this.data.labels=skillScore
+    }
   }
 }
 </script>
