@@ -6,7 +6,7 @@
     >
       <img
         class="gotop"
-        src="../assets/images/gotop.png"
+        src="../assets/images/gotop.jpg"
         alt="トップへ戻る"
       ></a>
     <div class="footerCopyright">

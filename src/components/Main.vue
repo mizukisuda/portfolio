@@ -10,7 +10,7 @@
     </div>
     <img
       class="profilePicture"
-      src="../assets/images/profilePicture.png"
+      src="../assets/images/profilePicture.jpg"
     >
   </div>
 </template>

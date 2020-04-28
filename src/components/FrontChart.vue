@@ -50,12 +50,12 @@ created () {
     // storeからfrontscore, nameを持ってくる
    // dataの中のdatasets配列０番目を持ってくる
     getSkillScore(){
-      const skillScore=this.$store.getters.Score(0)
+      const skillScore=this.$store.getters.Score(this.$store.state.categories['front-end'])
       this.data.datasets[0].data=skillScore
     },
     // storeからname
     getSkillName(){
-      const skillScore=this.$store.getters.Name(0)
+      const skillScore=this.$store.getters.Name(this.$store.state.categories['front-end'])
       this.data.labels=skillScore
     }
   }

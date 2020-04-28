@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
   skillScore: [],
   // falseを定義して初期値を読み込まないにする
-  loaded: false
+  loaded: false,
+  categories: {'front-end' : 0, 'back-end' : 1, 'devops' : 2}
   },
 // ①空の配列（scoreAllay）
 // ②に入れたいデータを指定する
