@@ -10,7 +10,7 @@
     </div>
     <img
       class="profilePicture"
-      src="../assets/images/profilePicture.png"
+      src="../assets/images/profilePicture.jpg"
     >
   </div>
 </template>
@@ -23,7 +23,7 @@
 <style scoped>
 #mainSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
-  padding: 20px 0 20px 0;
+  padding: 60px 0 20px 0;
   text-align: center;
 }
 

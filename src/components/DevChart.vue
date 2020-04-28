@@ -48,12 +48,12 @@ created () {
   methods:{
     // storeからscore
     getSkillScore(){
-      const skillScore=this.$store.getters.devScore
+      const skillScore=this.$store.getters.Score(this.$store.state.categories['devops'])
       this.data.datasets[0].data=skillScore
     },
     // storeからname
     getSkillName(){
-      const skillScore=this.$store.getters.devName
+      const skillScore=this.$store.getters.Name(this.$store.state.categories['devops'])
       this.data.labels=skillScore
     }
   }

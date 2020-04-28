@@ -46,8 +46,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #headerSection {
-  padding: 20px;
   background: #f3f3f3;
+  position: fixed;
+  width: 100%;
+  padding: 20px;
 }
 
 #nav-drawer {
