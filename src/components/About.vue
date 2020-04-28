@@ -8,6 +8,7 @@
         北海道出身の新卒一年目。大学では教育哲学を学んでおり、「自己を助けるテクノロジーとしての当事者研究」をテーマに卒業研究を執筆。具体的には、「精神障害や依存症の当事者が薬物療法だけに頼らず自身と向き合っていく方法」を研究した。しかし、「自己を助ける」ということをWeb系アプリケーションなどのIT技術を用いて実現することに可能性を感じ、教育者からエンジニアに方向転換。以降は哲学や行動経済学、Webサービスの技術に興味を持ち、未経験から技術を学ぶ。
       </p>
     </div>
+    <div class="goToSkill" />
   </div>
 </template>
 
@@ -19,7 +20,7 @@
 <style scoped>
 #aboutSection {
   background-color: #f5f5f5;
-  padding: 0 0 20px 0;
+  padding: 60px 0 60px 0;
 }
 
 .aboutTitle {
@@ -43,5 +44,9 @@ p {
   font-size: 12pt;
   font-family: "Noto Sans JP", sans-serif;
   word-wrap: break-all;
+}
+
+.goToSkill {
+  padding-bottom: 30px;
 }
 </style>

@@ -12,6 +12,7 @@
       class="profilePicture"
       src="../assets/images/profilePicture.jpg"
     >
+    <div class="goToAbout" />
   </div>
 </template>
 
@@ -23,7 +24,7 @@
 <style scoped>
 #mainSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
-  padding: 60px 0 20px 0;
+  padding: 90px 0 50px 0;
   text-align: center;
 }
 

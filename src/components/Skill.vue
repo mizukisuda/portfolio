@@ -143,6 +143,7 @@ export default {
   background-color: #fff;
   height: auto;
   width: 100%;
+  padding: 60px 0 60px 0;
 }
 
 .skillTitle {

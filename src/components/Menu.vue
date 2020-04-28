@@ -52,7 +52,7 @@
     Home () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#headerSection'),
+        document.querySelector('#app'),
         400,
         null,
         null,
@@ -63,7 +63,7 @@
     About () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#aboutSection'),
+        document.querySelector('.goToAbout'),
         400,
         null,
         null,
@@ -74,7 +74,7 @@
     Skill () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#skillSection'),
+        document.querySelector('.goToSkill'),
         400,
         null,
         null,
@@ -85,7 +85,7 @@
   Vision () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#visionSection'),
+        document.querySelector('#skillSection'),
         400,
         null,
         null,
