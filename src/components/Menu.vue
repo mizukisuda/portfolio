@@ -5,7 +5,7 @@
     >
       <img
         class="drawerButton"
-        src="../assets/images/close.png"
+        src="../assets/images/close.jpg"
       >
     </label>
     <ul class="drawerMenuSection">
