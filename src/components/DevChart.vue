@@ -17,6 +17,7 @@ export default {
               'rgba(87, 16, 131, 0.7)',
               'rgba(87, 16, 131, 0.7)',
               'rgba(87, 16, 131, 0.7)',
+              'rgba(87, 16, 131, 0.7)',
               'rgba(87, 16, 131, 0.7)'
             ],
             borderWidth: 1
@@ -47,12 +48,12 @@ created () {
   methods:{
     // storeからscore
     getSkillScore(){
-      const skillScore=this.$store.getters.devScore
+      const skillScore=this.$store.getters.Score(2)
       this.data.datasets[0].data=skillScore
     },
     // storeからname
     getSkillName(){
-      const skillScore=this.$store.getters.devName
+      const skillScore=this.$store.getters.Name(2)
       this.data.labels=skillScore
     }
   }

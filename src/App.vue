@@ -2,7 +2,6 @@
   <div id="app">
     <Header />
     <Main />
-    <!-- <div>{{ this.category }}</div> -->
     <About />
     <Skill />
     <Vision />

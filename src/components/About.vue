@@ -12,18 +12,7 @@
 </template>
 
 <script>
-// export default{
-  // name: 'About',
-  // computed: {
-    // score(){
-      // return this.$store.getters.skillScore[0].category
-    // }},
-    // methods:{
-      // getScore(){
-        // this.$store.dispatch('getSkillScore')
-      // }
-    // }
-// }
+/* only comments */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,7 +1,6 @@
 <template>
   <div id="footerSection">
     <a
-      id="smoothScroll"
       href="#app"
       @click="clickSmoothScroll()"
     >
@@ -11,7 +10,7 @@
         alt="トップへ戻る"
       ></a>
     <div class="footerCopyright">
-      <small> &copy;Seattleconsulting</small>
+      &copy;Seattleconsulting
     </div>
   </div>
 </template>
@@ -39,24 +38,22 @@ export default {
     background: linear-gradient(#80e1f7, #06c1e6);
     width: 100%;
     height: auto;
-    margin-top: auto;
     text-align: center;
-    padding: 20px 0 15px 0;
-    position: relative;
+    padding-bottom: 20px;
   }
 
-  .foterCopyright {
+  .footerCopyright {
+    color: #555;
     font-family: 'Noto Sans JP', sans-serif;
-    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   .gotop {
-    width: 30px;
-    height: 30px;
-    margin: 0 auto;
-    top: -15px;
-    left: 49%;
-    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    position: relative;
   }
 
 </style>

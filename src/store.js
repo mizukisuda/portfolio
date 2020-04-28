@@ -14,49 +14,20 @@ export default new Vuex.Store({
 // ②に入れたいデータを指定する
 // skillScoreの[0](=categoryのfront-end)のskill（skillInfoとする）からforEach文でscoreをscoreAllyにプッシュする
   getters: {
-    frontScore(state){
+    Score:(state)=>(index)=>{
       const frontScoreAllay=[]
-      state.skillScore[0].skill.forEach((skillInfo)=>{
+      state.skillScore[index].skill.forEach((skillInfo)=>{
         frontScoreAllay.push(skillInfo.score)
       })
       return frontScoreAllay
     },
-    backScore(state){
-      const backScoreAllay=[]
-      state.skillScore[1].skill.forEach((skillInfo)=>{
-        backScoreAllay.push(skillInfo.score)
-      })
-      return backScoreAllay
-    },
-    devScore(state){
-      const devScoreAllay=[]
-      state.skillScore[2].skill.forEach((skillInfo)=>{
-        devScoreAllay.push(skillInfo.score)
-      })
-      return devScoreAllay
-    },
-    frontName(state){
+    Name:(state)=>(index)=>{
       const frontNameAllay=[]
-      state.skillScore[0].skill.forEach((skillInfo)=>{
+      state.skillScore[index].skill.forEach((skillInfo)=>{
         frontNameAllay.push(skillInfo.name)
       })
       return frontNameAllay
-    },
-    backName(state){
-      const backNameAllay=[]
-      state.skillScore[1].skill.forEach((skillInfo)=>{
-        backNameAllay.push(skillInfo.name)
-      })
-      return backNameAllay
-    },
-    devName(state){
-      const devNameAllay=[]
-      state.skillScore[2].skill.forEach((skillInfo)=>{
-        devNameAllay.push(skillInfo.name)
-      })
-      return devNameAllay
     }
-
   },
 
   mutations: {
