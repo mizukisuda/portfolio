@@ -10,7 +10,7 @@
 # both:本番、開発両方
 # sh deploy.sh both
 # 上記コマンドのいずれかを実行する
-#
+# 
 # masterブランチ名が異なる人は変えてください(いないと思うが)
 MASTER_BRANCH='master'
 # TODO: 自分の開発用サービス名に変更する
