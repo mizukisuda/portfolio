@@ -9,7 +9,7 @@ export default new Vuex.Store({
   skillScore: [],
   // falseを定義して初期値を読み込まないにする
   loaded: false,
-  categories: {'front-end' : 0, 'back-end' : 1, 'devops' : 2}
+  categories: {'front-end' : 2, 'back-end' : 1, 'devops' : 0}
   },
 // ①空の配列（scoreAllay）
 // ②に入れたいデータを指定する
